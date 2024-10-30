@@ -5,7 +5,8 @@
  function showNotes(){
    notesContainer.innerHTML = localStorage.getItem("notes");
  }
-
+ showNotes();
+ 
  function updateStorage(){
    localStorage.setItem("notes", notesContainer.innerHTML);
  }
@@ -39,5 +40,6 @@
       event.preventDefault();
    }
  }) 
+
+
  
- showNotes();
