@@ -102,4 +102,22 @@ body {
     width: var(--size);
     height: var(--size);
     z-index: 1000;
+    display: none;
+}
+
+.createBox textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--size);
+    height: var(--size);
+    padding: 20px;
+    outline: none;
+    font-size: 0.2em;
+    resize: none;
+}
+
+.details h3 {
+    user-select: none;
+    font-size: 1.45em;
 }
