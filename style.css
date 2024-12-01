@@ -1,8 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Just Another Hand", cursive;
+    font-family: "Handlee", cursive;
     box-sizing: border-box;
+}
+
+:root{
+    --size: 300px;
 }
 
 body {
@@ -27,43 +31,75 @@ body {
     margin-right: 8px;
 }
 
-.container button img {
-    width: 25px;
-    margin-right: 8px;
-}
-
-.container button {
-    display: flex;
-    align-items: center;
-    font-size: 35px;
-    outline: 0;
-    border: 0;
-    background-color: #E0218A;
-    color: #fff;
-    border-radius: 40px;
-    padding: 15px 25px;
-    margin: 30px 0 20px;
-    cursor: pointer;
-}
-
-.input-box {
+.notes-container {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    min-height: 150px;
-    background: #fff;
-    color: #000;
-    font-size: 25px;
-    padding: 20px;
-    margin: 20px 0;
-    outline: none;
-    border-radius: 5px;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px;
 }
 
-.input-box img {
-    width: 25px;
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.note {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    background: #FFEBCD;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.note::before {
+    content: 'Double Click to Remove This Note';
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85em;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.note:hover:before {
+    opacity: 1;
+}
+
+#create {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    background: #FF9A8A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6em;
     cursor: pointer;
+}
+
+#create i {
+    position: absolute;
+    color: #fff;
+}
+
+.createBox {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    z-index: 1000;
 }
